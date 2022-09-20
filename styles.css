@@ -1,0 +1,76 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #202020;
+}
+
+body {
+  display: flex;
+}
+.left-image {
+  max-width: 50%;
+  min-height: 100%;
+}
+.left-img-girl {
+  max-width: 100%;
+  max-height: 100%;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.header-text {
+  padding: 20px 0;
+  font-size: 20px;
+  justify-content: flex-start;
+  text-align: left;
+}
+.header-subtext {
+  color: #ffffff40;
+  font-size: 15px;
+  padding: 10px 0;
+}
+.container {
+  margin: 20px 100px;
+  text-align: center;
+  color: #ffffff98;
+}
+.right-side {
+  padding: 20px;
+  min-width: 50%;
+  align-self: center;
+  text-align: center;
+}
+.devrev-logo {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+
+input {
+  border: none;
+  height: 25px;
+  border-radius: 5px;
+  background: hsla(0, 0%, 100%, 0.1);
+  padding: 2px 5px;
+}
+
+.name-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: left;
+  margin: 10px 0;
+}
+
+.name-input-field {
+  width: auto;
+  margin: 0 5px;
+  color: #ffffff98;
+}
+.name-input-field:active {
+  border: 1px solid red;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Welcome to DevRev 👋🏾</title>
+  </head>
+  <body>
+    <section class="left-image">
+      <img class="left-img-girl" src="/assets/image/login-girl.webp" />
+    </section>
+    <section class="right-side">
+      <div class="container">
+        <header>
+          <img class="devrev-logo" src="assets/image/logo.png" />
+          <div class="header-text">
+            Welcome to Devrev
+            <p class="header-subtext">
+              Fill out all the necessary details down below
+            </p>
+          </div>
+        </header>
+        <form>
+          <div class="name-row">
+            <input class="name-input-field" type="text" name="firstname" size="15" placeholder="First Name" required autocomplete="off"/>
+            <input class="name-input-field" type="text" name="middlename" size="15" placeholder="Middle Name" autocomplete="off"/>
+            <input class="name-input-field" type="text" name="lastname" size="15" placeholder="Last Name" required autocomplete="off"/>
+        </div>
+        <input type="email" id="email" name="email" placeholder="Enter your Email ID Here"/> <br />
+        <label> Designation : </label>
+        <select>
+            <option value="Course">Course</option>
+            <option value="BCA">BCA</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+            <option value="M.Tech">M.Tech</option>
+        </select>
+        
+          <br />
+          <br />
+          <label> Gender : </label><br />
+          <input type="radio" name="male" /> Male <br />
+          <input type="radio" name="female" /> Female <br />
+          <input type="radio" name="other" /> Other
+          <br />
+          <br />
+
+          <label> Phone : </label>
+          <input type="text" name="country code" value="+91" size="2" />
+          <input type="text" name="phone" size="10" /> <br />
+          <br />
+          Address
+          <br />
+          <textarea cols="80" rows="5" value="address"> </textarea>
+          
+          
+          <input type="button" value="Submit" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
