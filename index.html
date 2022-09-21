@@ -16,18 +16,18 @@
         <header>
           <img class="devrev-logo" src="assets/image/logo.png" />
           <div class="header-text">
-            Welcome to Devrev
+            Welcome to DevRev
             <p class="header-subtext">
               Fill out all the necessary details down below
             </p>
           </div>
         </header>
-        <form>
+        <form id="form">
           <div class="name-row">
             <input
               class="name-input-field"
               type="text"
-              name="firstname"
+              id="firstname"
               size="15"
               placeholder="First Name"
               required
@@ -36,7 +36,7 @@
             <input
               class="name-input-field"
               type="text"
-              name="middlename"
+              id="middlename"
               size="15"
               placeholder="Middle Name"
               autocomplete="off"
@@ -44,7 +44,7 @@
             <input
               class="name-input-field"
               type="text"
-              name="lastname"
+              id="lastname"
               size="15"
               placeholder="Last Name"
               required
@@ -71,14 +71,14 @@
             />
           </div>
           <div class="desig-gender-row">
-            <select>
+            <select id="designation">
               <option value="Designation">Designation</option>
               <option value="BCA">UX - Engineer</option>
               <option value="BBA">Strategic Ops</option>
               <option value="B.Tech">Finance</option>
               <option value="MBA">Marketing</option>
             </select>
-            <select>
+            <select id="gender">
               <option value="Gender">Gender</option>
               <option value="Female">Female</option>
               <option value="Male">Male</option>
@@ -93,9 +93,15 @@
               placeholder="Enter your Permanent Address Here"
             />
           </div>
-          <input class="submit-btn" type="button" value="Submit" />
+          <!-- <input class="upload-resume" type="file" id="myFile" name="resume-upload" >
+          <label class="upload-label" for="resume-upload">Upload Resume</label> -->
+          <div class="btn-row">
+              <input class="reset-btn" type="button" value="Reset Form" />
+              <input id="submit-btn" class="submit-btn" type="submit" value="Submit" />
+          </div>
         </form>
       </div>
     </section>
+    <script src="./script.js" ></script>
   </body>
 </html>
