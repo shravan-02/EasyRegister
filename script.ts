@@ -1,5 +1,3 @@
-// const submitBtn = <HTMLInputElement>document.getElementById("submit-btn")
-
 // submitBtn.addEventListener("click", () => {
 //     let firstName = <HTMLInputElement>document.getElementById("firstname")
 //     let middleName = <HTMLInputElement>document?.getElementById("middlename")
@@ -8,44 +6,174 @@
 //     console.log(firstName.value)
 // })
 
+// const getFormVal = <HTMLFormElement>document.getElementById("form")
+// console.log(getFormVal)
+// getFormVal.addEventListener("submit", (e) => {
+//     e.preventDefault()
+//     console.log("submitted")
+//     let firstName = <HTMLInputElement>document.getElementById("firstname")
+//     let middleName = <HTMLInputElement>document.getElementById("middlename")
+//     let lastName = <HTMLInputElement>document.getElementById("lastname")
+//     let email = <HTMLInputElement>document.getElementById("email")
+//     let phone = <HTMLInputElement>document.getElementById("phoneNo")
 
-const getFormVal = <HTMLFormElement>document.getElementById("form")
-console.log(getFormVal)
-getFormVal.addEventListener("submit", (e) => {
-    e.preventDefault()
-    console.log("submitted")
-    let firstName = <HTMLInputElement>document.getElementById("firstname")
-    let middleName = <HTMLInputElement>document.getElementById("firstname")
-    let lastName = <HTMLInputElement>document.getElementById("lastname")
-    let email = <HTMLInputElement>document.getElementById("email")
-    let phone = <HTMLInputElement>document.getElementById("phoneNo")
-   
-    let desigSelect = <HTMLSelectElement>document.getElementById("designation")
-    let desigValue = desigSelect.options[desigSelect.selectedIndex].value
-    
-    let genderSelect = <HTMLSelectElement>document.getElementById("gender")
-    let genderValue = genderSelect.options[genderSelect.selectedIndex].value
+//     let desigSelect = <HTMLSelectElement>document.getElementById("designation")
+//     let desigValue = desigSelect.options[desigSelect.selectedIndex].value
 
+//     let genderSelect = <HTMLSelectElement>document.getElementById("gender")
+//     let genderValue = genderSelect.options[genderSelect.selectedIndex].value
 
-    console.log(firstName.value, middleName, lastName, email);
+//     console.log(firstName.value, middleName, lastName, email);
 
-    // return firstName.value, middleName.value, lastName.value, email.value, phone.value, desigValue, genderValue;
+//     // return firstName.value, middleName.value, lastName.value, email.value, phone.value, desigValue, genderValue;
 
-    if( /^[a-zA-Z]+$/.test(firstName.value) === false){
-        firstName.style.border = "1px solid red";
-        console.log("false")
-    }
-    if( /^[a-zA-Z]+$/.test(middleName.value) === false){
-        middleName.style.border = "1px solid red";
-        console.log("false")
-    }
-    if( /^[a-zA-Z]+$/.test(lastName.value) === false){
-        lastName.style.border = "1px solid red";
-        console.log("false")
-    }
+//     if( /^[a-zA-Z]+$/.test(firstName.value) === false){
+//         firstName.style.border = "1px solid red";
+//         console.log("false")
+//     }
 
-    if(phone.value.length < 10){
-        phone.style.border = "1px solid red";
-    }
+//     if( /^[a-zA-Z]+$/.test(middleName.value) === false){
+//         middleName.style.border = "1px solid red";
+//         console.log("false")
+//     }
+//     if( /^[a-zA-Z]+$/.test(lastName.value) === false){
+//         lastName.style.border = "1px solid red";
+//         console.log("false")
+//     }
 
-})  
+//     if(phone.value.length < 10){
+//         phone.style.border = "1px solid red";
+//     }
+
+// })
+
+let title = <HTMLDivElement>document.getElementById("devrevTitle");
+let firstName = <HTMLInputElement>document.getElementById("firstname");
+let middleName = <HTMLInputElement>document.getElementById("middlename");
+let lastName = <HTMLInputElement>document.getElementById("lastname");
+let email = <HTMLInputElement>document.getElementById("email");
+let phone = <HTMLInputElement>document.getElementById("phoneNo");
+
+let desigSelect = <HTMLSelectElement>document.getElementById("designation");
+let desigValue = desigSelect.options[desigSelect.selectedIndex].value;
+
+let genderSelect = <HTMLSelectElement>document.getElementById("gender");
+let genderValue = genderSelect.options[genderSelect.selectedIndex].value;
+
+let addressValue = <HTMLInputElement>document.getElementById("address-value");
+
+function firstNameValidate(): void {
+  let labelEl = <HTMLLabelElement>document.getElementById("nameError");
+  let rowDisable = <HTMLDivElement>document.getElementById("emailPhoneRow");
+  let submitBtn = <HTMLInputElement>document.getElementById("submit-btn");
+  if (
+    /^[a-zA-Z]+$/.test(firstName.value) === false &&
+    firstName.value.length > 0
+  ) {
+    firstName.style.border = "1px solid red";
+    rowDisable.style.display = "none";
+    labelEl.style.display = "flex";
+    title.style.color = "red";
+  } else {
+    firstName.style.border = "none";
+    rowDisable.style.display = "flex";
+    labelEl.style.display = "none";
+    title.style.color = "#ffffff98";
+  }
+}
+
+function middleNameValidate(): void {
+  let labelEl = <HTMLLabelElement>document.getElementById("nameError");
+  let rowDisable = <HTMLDivElement>document.getElementById("emailPhoneRow");
+  if (
+    /^[a-zA-Z]+$/.test(middleName.value) === false &&
+    middleName.value.length > 0
+  ) {
+    middleName.style.border = "1px solid red";
+    rowDisable.style.display = "none";
+    labelEl.style.display = "flex";
+    title.style.color = "red";
+  } else {
+    middleName.style.border = "none";
+    rowDisable.style.display = "flex";
+    labelEl.style.display = "none";
+    title.style.color = "#ffffff98";
+  }
+}
+function lastNameValidate(): void {
+  let labelEl = <HTMLLabelElement>document.getElementById("nameError");
+  let rowDisable = <HTMLDivElement>document.getElementById("emailPhoneRow");
+  if (
+    /^[a-zA-Z]+$/.test(lastName.value) === false &&
+    lastName.value.length > 0
+  ) {
+    lastName.style.border = "1px solid red";
+    rowDisable.style.display = "none";
+    labelEl.style.display = "flex";
+    title.style.color = "red";
+  } else {
+    lastName.style.border = "none";
+    rowDisable.style.display = "flex";
+    labelEl.style.display = "none";
+    title.style.color = "#ffffff98";
+  }
+}
+
+function phoneValidate(): void {
+  console.log("blur");
+  let labelEl = <HTMLInputElement>document.getElementById("phoneError");
+  let rowDisable = <HTMLDivElement>document.getElementById("desigGenderRow");
+  if (
+    phone.value[0] !== "9" &&
+    phone.value[0] !== "8" &&
+    phone.value[0] !== "7" &&
+    phone.value[0] !== "6" &&
+    phone.value.length > 0
+  ) {
+    phone.style.border = "1px solid red";
+    rowDisable.style.display = "none";
+    labelEl.style.display = "flex";
+    title.style.color = "red";
+  } else {
+    phone.style.border = "none";
+    rowDisable.style.display = "flex";
+    labelEl.style.display = "none";
+    title.style.color = "#ffffff98";
+  }
+}
+
+let formEl = <HTMLInputElement>document.getElementById("form");
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  interface empData {
+    firstName: string;
+    middleName?: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    desigValue: string;
+    genderValue: string;
+    addressValue: string;
+  }
+
+  let newEmp: empData = {
+    firstName: `${firstName.value}`,
+    middleName: `${middleName.value}`,
+    lastName: `${lastName.value}`,
+    email: `${email.value}`,
+    phone: `${phone.value}`,
+    desigValue: `${desigValue}`,
+    genderValue: `${genderValue}`,
+    addressValue: `${addressValue}`,
+  };
+  console.log(newEmp);
+
+  title.textContent = "Form Submitted";
+  formEl.style.display = "none";
+});
+
+let resetBtn = <HTMLInputElement>document.getElementById("resetBtn");
+resetBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.reload();
+});
